@@ -2,7 +2,7 @@
 
 void	sa(ps_lst **stack_a)
 {
-	if(!stack_a)
+	if(!stack_a || !(*stack_a)->next)
 		return ;
 	
 	ps_lst *tmp = *stack_a;
@@ -10,6 +10,19 @@ void	sa(ps_lst **stack_a)
 	tmp->next = (*stack_a)->next;
 	(*stack_a)->next = tmp;
 	write(1, "sa\n", 3);
+}
+
+void	sb(ps_lst **stack_b)
+{
+	if(!stack_b || !(*stack_b)->next)
+		return ;
+	
+	ps_lst *tmp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp->next = (*stack_b)->next;
+	(*stack_b)->next = tmp;
+
+	write(1, "sb\n", 3);
 }
 
 
@@ -35,6 +48,10 @@ int main(void)
 	stack_a_1->next = stack_a_2;
 	stack_a_2->next = stack_a_3;
 	stack_a_3->next = NULL;
+	// Connecting the nodes Stack A
+	stack_b_1->next = stack_b_2;
+	stack_b_2->next = stack_b_3;
+	stack_b_3->next = NULL;
 	// Check Nodes
 	if(stack_a_1->next->next && stack_a_1->num && stack_a_2->num && stack_a_3->num) 
 		printf("\e[42m STACK A \e[49m\n");
@@ -43,15 +60,21 @@ int main(void)
 	// Stack A Data(Copy the position for us to check)
 	int stack_a_data_1 = stack_a_1->num;
 	int stack_a_data_2 = stack_a_2->num;
-	// printf("\nValue Stack A(P1):%d, (P2): %d\n", stack_a_1->num, stack_a_2->num);
-	// if(stack_a_data_1 == stack_a_2->num && stack_a_data_2 == stack_a_1->num) 
-	// 	printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED A \e[49m\n");
-	// else
-	// 	printf("\e[101m FAULTY EXCHANGE \e[49m\n");
 	sa(&stack_a_1);
+	// Tests
 	printf("\nValue Stack A(P1):%d, (P2): %d\n", stack_a_1->num, stack_a_1->next->num);
 	if(stack_a_data_1 == stack_a_1->next->num && stack_a_data_2 == stack_a_1->num) 
 		printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED A \e[49m\n");
+	else
+		printf("\e[101m FAULTY EXCHANGE \e[49m\n");
+		// Stack B Data(Copy the position for us to check)
+	int stack_b_data_1 = stack_b_1->num;
+	int stack_b_data_2 = stack_b_2->num;
+	sb(&stack_b_1);
+	// Tests
+	printf("\nValue Stack A(P1):%d, (P2): %d\n", stack_b_1->num, stack_b_1->next->num);
+	if(stack_b_data_1 == stack_b_1->next->num && stack_b_data_2 == stack_b_1->num) 
+		printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED B \e[49m\n");
 	else
 		printf("\e[101m FAULTY EXCHANGE \e[49m\n");
 	return (0);
