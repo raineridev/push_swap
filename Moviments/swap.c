@@ -25,7 +25,24 @@ void	sb(ps_lst **stack_b)
 	write(1, "sb\n", 3);
 }
 
+void	ss(ps_lst **stack_a, ps_lst **stack_b)
+{
+	if(!stack_a || !(*stack_a)->next || !stack_b || !(*stack_b)->next)
+		return ;
 
+	ps_lst *tmp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	tmp->next = (*stack_a)->next;
+	(*stack_a)->next = tmp;
+
+	tmp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp->next = (*stack_b)->next;
+	(*stack_b)->next = tmp;
+
+	write(1, "ss\n", 3);
+}
+/*
 int main(void)
 {
 	// Stack A
@@ -67,15 +84,22 @@ int main(void)
 		printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED A \e[49m\n");
 	else
 		printf("\e[101m FAULTY EXCHANGE \e[49m\n");
-		// Stack B Data(Copy the position for us to check)
+	// Stack B Data(Copy the position for us to check)
 	int stack_b_data_1 = stack_b_1->num;
 	int stack_b_data_2 = stack_b_2->num;
 	sb(&stack_b_1);
 	// Tests
-	printf("\nValue Stack A(P1):%d, (P2): %d\n", stack_b_1->num, stack_b_1->next->num);
+	printf("\nValue Stack B(P1):%d, (P2): %d\n", stack_b_1->num, stack_b_1->next->num);
 	if(stack_b_data_1 == stack_b_1->next->num && stack_b_data_2 == stack_b_1->num) 
 		printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED B \e[49m\n");
 	else
 		printf("\e[101m FAULTY EXCHANGE \e[49m\n");
+	ss(&stack_a_1, &stack_b_1);
+	printf("\nValue Stack A(P1):%d, (P2): %d | Value Stack B(P1):%d, (P2): %d\n ", stack_a_1->num, stack_a_1->next->num, stack_b_1->num, stack_b_1->next->num);
+	if(stack_b_data_1 == stack_b_1->num && stack_b_data_2 == stack_b_1->next->num && (stack_a_data_1 == stack_a_1->num && stack_a_data_2 == stack_a_1->next->num)) 
+		printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED B \e[49m\n");
+	else
+		printf("\n\e[101m FAULTY EXCHANGE \e[49m\n");
 	return (0);
 }
+*/
