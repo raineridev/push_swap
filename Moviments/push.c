@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/01 12:59:21 by mraineri          #+#    #+#             */
+/*   Updated: 2024/10/01 12:59:22 by mraineri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 void    pa(ps_lst **stack_a, ps_lst **stack_b)
 {
@@ -29,6 +41,7 @@ void	pb(ps_lst **stack_b, ps_lst **stack_a)
 	(*stack_a)->next = tmp;
 	*stack_b = tmp_b;
 }
+
 int main(void)
 {
     // Stack A
