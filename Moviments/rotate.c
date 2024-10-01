@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:27:55 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 16:52:42 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:53:18 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void ra(ps_lst **stack_a)
     tmp->prev = *stack_a;
 }
 
-void ra(ps_lst **stack_b)
+void rb(ps_lst **stack_b)
 {
     ps_lst  *tmp;
     ps_lst  *tmp_run;
