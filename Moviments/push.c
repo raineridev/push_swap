@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:21 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 12:59:22 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/01 13:01:24 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	pb(ps_lst **stack_b, ps_lst **stack_a)
 	*stack_b = tmp_b;
 }
 
+/*
 int main(void)
 {
     // Stack A
@@ -97,3 +98,4 @@ int main(void)
 	pb(&stack_b_1, &stack_a_1);
 	return (0);
 }
+*/
