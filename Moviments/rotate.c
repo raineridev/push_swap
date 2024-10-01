@@ -6,53 +6,52 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:27:55 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 16:53:18 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:38:43 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ra(ps_lst **stack_a)
+void rotate(ps_lst **stack)
 {
     ps_lst  *tmp;
     ps_lst  *tmp_run;
     
-    if (!*stack_a || !(*stack_a)->num || !(*stack_a)->next)
+    if (!*stack || !(*stack)->num || !(*stack)->next)
         return ;
-    tmp = *stack_a;
-    tmp_run = *stack_a;
+    tmp = *stack;
+    tmp_run = *stack;
 
     while(tmp_run->next)
         tmp_run = tmp_run->next;
     tmp_run->prev->next = NULL;
     tmp_run->next = tmp;
-    *stack_a = tmp_run;
+    *stack = tmp_run;
     
-    (*stack_a)->prev = NULL;
-    tmp->prev = *stack_a;
+    (*stack)->prev = NULL;
+    tmp->prev = *stack;
 }
 
-void rb(ps_lst **stack_b)
+void    ra(ps_lst **stack)
 {
-    ps_lst  *tmp;
-    ps_lst  *tmp_run;
-    
-    if (!*stack_b || !(*stack_b)->num || !(*stack_b)->next)
-        return ;
-    tmp = *stack_b;
-    tmp_run = *stack_b;
-
-    while(tmp_run->next)
-        tmp_run = tmp_run->next;
-    tmp_run->prev->next = NULL;
-    tmp_run->next = tmp;
-    *stack_b = tmp_run;
-    
-    (*stack_b)->prev = NULL;
-    tmp->prev = *stack_b;
+    rotate(stack);
+    write(1, "ra\n", 3);
 }
 
+void    rb(ps_lst **stack)
+{
+    rotate(stack);
+    write(1, "ra\n", 3);
+}
 
+void    rr(ps_lst **stack_a, ps_lst **stack_b)
+{
+    rotate(stack_a);
+    rotate(stack_b);
+    write(1, "rr\n", 3);
+}
+
+/*
 int main(void)
 {
     // Create Stack
@@ -80,3 +79,4 @@ int main(void)
     printf("%d, %d, %d", stack_a_1->num, stack_a_1->next->num, stack_a_1->next->next->num);
     return (0);
 }
+*/
