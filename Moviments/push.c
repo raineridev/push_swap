@@ -16,6 +16,19 @@ void    pa(ps_lst **stack_a, ps_lst **stack_b)
 	*stack_a = tmp_a;
 }
 
+void	pb(ps_lst **stack_b, ps_lst **stack_a)
+{
+	ps_lst *tmp;
+	ps_lst *tmp_b;
+
+
+	tmp = *stack_b;
+	tmp_b = (*stack_b)->next;
+
+	*stack_a = *stack_b;
+	(*stack_a)->next = tmp;
+	*stack_b = tmp_b;
+}
 int main(void)
 {
     // Stack A
@@ -68,5 +81,6 @@ int main(void)
 		printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED A -> B \e[49m\n");
 	else
 		printf("\n\e[101m FAULTY EXCHANGE \e[49m\n");
-    return (0);
+	pb(&stack_b_1, &stack_a_1);
+	return (0);
 }
