@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:10:14 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/02 13:25:12 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:26:02 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ ps_lst  *ps_create(int num)
 
     return (lst);
 }
+
 /*
 int main(void)
 {
