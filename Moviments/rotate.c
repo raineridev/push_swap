@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:27:55 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 17:38:43 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/01 21:07:04 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void rotate(ps_lst **stack)
     ps_lst  *tmp;
     ps_lst  *tmp_run;
     
-    if (!*stack || !(*stack)->num || !(*stack)->next)
+    if (!*stack || !(*stack)->next)
         return ;
     tmp = *stack;
     tmp_run = *stack;
