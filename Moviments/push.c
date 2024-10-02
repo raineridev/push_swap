@@ -6,19 +6,16 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:21 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 13:01:24 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:53:35 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-void    pa(ps_lst **stack_a, ps_lst **stack_b)
-{
-	if(!stack_a || !(*stack_b)->next || !(*stack_a)->num || !(*stack_a)->next->num)
-        return ;
-    
+
+void    push(ps_lst **stack_a, ps_lst **stack_b)
+{    
 	ps_lst *tmp;
 	ps_lst *tmp_a;
-
 
 	tmp = *stack_b;
 	tmp_a = (*stack_a)->next;
@@ -26,23 +23,23 @@ void    pa(ps_lst **stack_a, ps_lst **stack_b)
 	*stack_b = *stack_a;
 	(*stack_b)->next = tmp;
 	*stack_a = tmp_a;
+	(*stack_b)->next->prev = *stack_b;
 }
+
+void	pa(ps_lst **stack_a, ps_lst **stack_b)
+{
+	push(stack_a, stack_b);
+	write(1, "pa\n", 3);
+}
+
 
 void	pb(ps_lst **stack_b, ps_lst **stack_a)
 {
-	ps_lst *tmp;
-	ps_lst *tmp_b;
-
-
-	tmp = *stack_b;
-	tmp_b = (*stack_b)->next;
-
-	*stack_a = *stack_b;
-	(*stack_a)->next = tmp;
-	*stack_b = tmp_b;
+	push(stack_b, stack_a);
+	write(1, "pb\n", 3);
 }
 
-/*
+
 int main(void)
 {
     // Stack A
@@ -71,7 +68,7 @@ int main(void)
 	stack_b_3->next = NULL;
 	// Check Nodes
 	if(stack_a_1->next->next && stack_a_1->num && stack_a_2->num && stack_a_3->num) 
-		printf("\e[42m STACK A \e[49m\n");
+		printf("\n\e[42m STACK A \e[49m\n");
 	else 
 		printf("\e[101m STACK A \e[49m\n");
     if(stack_b_1->next->next && stack_b_1->num && stack_b_2->num && stack_b_3->num) 
@@ -95,7 +92,6 @@ int main(void)
 		printf("\n\e[42m EXCHANGE SUCCESSFULLY COMPLETED A -> B \e[49m\n");
 	else
 		printf("\n\e[101m FAULTY EXCHANGE \e[49m\n");
-	pb(&stack_b_1, &stack_a_1);
+	printf("\n\nPrev (P2) -> %d\n\n", stack_b_1->next->prev->num);
 	return (0);
 }
-*/
