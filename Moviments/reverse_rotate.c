@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:41:30 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 17:59:57 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/01 21:02:36 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,21 @@ void reverse_rotate(ps_lst **stack)
 
 void    rra(ps_lst **stack_a)
 {
-    reverse_rotate(stack_b);
-    write(1, "rra\n", 4)
+    reverse_rotate(stack_a);
+    write(1, "rra\n", 4);
 }
 
 void    rrb(ps_lst **stack_a)
 {
     reverse_rotate(stack_a);
-    write(1, "rrb\n", 4)
+    write(1, "rrb\n", 4);
 }
 
 void    rrr(ps_lst **stack_a, ps_lst **stack_b)
 {
     reverse_rotate(stack_a);
     reverse_rotate(stack_b);
-    write(1, "rrr\n", 4)
+    write(1, "rrr\n", 4);
 }
 
 /*
