@@ -3,55 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:28 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 12:59:30 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:02:41 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	swap(ps_lst **stack)
+{
+
+	ps_lst *tmp = *stack;
+	*stack = (*stack)->next;
+	tmp->next = (*stack)->next;
+	(*stack)->next = tmp;
+	tmp->prev = *stack;
+	
+}
 void	sa(ps_lst **stack_a)
 {
-	if(!stack_a || !(*stack_a)->next)
-		return ;
-	
-	ps_lst *tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	tmp->next = (*stack_a)->next;
-	(*stack_a)->next = tmp;
+	swap(stack_a);
 	write(1, "sa\n", 3);
 }
 
 void	sb(ps_lst **stack_b)
 {
-	if(!stack_b || !(*stack_b)->next)
-		return ;
-	
-	ps_lst *tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = (*stack_b)->next;
-	(*stack_b)->next = tmp;
-
+	swap(stack_b);
 	write(1, "sb\n", 3);
 }
 
 void	ss(ps_lst **stack_a, ps_lst **stack_b)
 {
-	if(!stack_a || !(*stack_a)->next || !stack_b || !(*stack_b)->next)
-		return ;
-
-	ps_lst *tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	tmp->next = (*stack_a)->next;
-	(*stack_a)->next = tmp;
-
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = (*stack_b)->next;
-	(*stack_b)->next = tmp;
-
+	swap(stack_a);
+	swap(stack_b);
 	write(1, "ss\n", 3);
 }
 /*
