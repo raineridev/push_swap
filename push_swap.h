@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/02 13:43:23 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:03:05 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,8 @@ void reverse_rotate(ps_lst **stack);
 void    rra(ps_lst **stack_a);
 void    rrb(ps_lst **stack_a);
 void    rrr(ps_lst **stack_a, ps_lst **stack_b);
-
+///
+// Arguments
+int		ft_atoi(char *str);
+int	add_args(ps_lst **head, int *args);
 #endif
