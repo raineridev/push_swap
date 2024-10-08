@@ -39,7 +39,7 @@ void	pb(ps_lst **stack_b, ps_lst **stack_a)
 	write(1, "pb\n", 3);
 }
 
-
+/*
 int main(void)
 {
     // Stack A
@@ -95,3 +95,4 @@ int main(void)
 	printf("\n\nPrev (P2) -> %d\n\n", stack_b_1->next->prev->num);
 	return (0);
 }
+*/
