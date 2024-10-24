@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void add_args(ps_lst **head, int *args)
 {
@@ -23,10 +23,10 @@ void add_args(ps_lst **head, int *args)
     while(args[i++])
     {
         node = ps_create(args[i]);
-        ps_link(head ,&node);
+        ps_link(head ,&node, i);
     }
 }
-/*
+
 int main(void)
 {
     int args[] = {1,7,4,2,3,8,9,10}; 
@@ -35,11 +35,10 @@ int main(void)
     int i = 0;
     while (head->next)
     {
-        printf("[%d] ->%d\n", i, head->num);
+        printf("%d -? [%d] ->%d\n", i, head->index, head->num);
         i++;
         head = head->next;
     }
-    
     return (0);
 }
-*/
+
