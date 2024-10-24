@@ -14,7 +14,5 @@
 
 int main(int argc, char *argv[])
 {
-    
-    test_duplicates_num(argv);
-    //printf("%s", argv[11]);
+    return (0);
 }
