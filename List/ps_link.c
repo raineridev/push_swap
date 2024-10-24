@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void    ps_link(ps_lst **lst, ps_lst **node)
+void    ps_link(ps_lst **lst, ps_lst **node, int index)
 {
     if(!(*lst) && !(*node))
         return ;
@@ -23,6 +23,7 @@ void    ps_link(ps_lst **lst, ps_lst **node)
     while (tmp->next)
         tmp = tmp->next;
     tmp->next = *node;
+    (*node)->index = index;
     (*node)->prev = *lst;
 }  
 /*
