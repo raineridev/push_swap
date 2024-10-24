@@ -22,13 +22,14 @@
 typedef	struct p_lst 
 {
 	int	num;
+	int index;
 	struct p_lst *next;
 	struct p_lst *prev;
 } ps_lst;
 
 // List Functions -> List/
 ps_lst  *ps_create(int num);
-void    ps_link(ps_lst **lst, ps_lst **node);
+void    ps_link(ps_lst **lst, ps_lst **node, int index);
 // List Moviments -> Moviments/
 /// Push Moviment -> push.c
 void    push(ps_lst **stack_a, ps_lst **stack_b);
@@ -52,5 +53,5 @@ void    rrr(ps_lst **stack_a, ps_lst **stack_b);
 ///
 // Arguments
 int		ft_atoi(char *str);
-int	add_args(ps_lst **head, int *args);
+void	add_args(ps_lst **head, int *args);
 #endif
