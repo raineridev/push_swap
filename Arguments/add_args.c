@@ -27,18 +27,3 @@ void add_args(ps_lst **head, int *args)
     }
 }
 
-int main(void)
-{
-    int args[] = {1,7,4,2,3,8,9,10}; 
-    ps_lst *head = malloc(sizeof(ps_lst));
-    add_args(&head, args);
-    int i = 0;
-    while (head->next)
-    {
-        printf("%d -? [%d] ->%d\n", i, head->index, head->num);
-        i++;
-        head = head->next;
-    }
-    return (0);
-}
-
