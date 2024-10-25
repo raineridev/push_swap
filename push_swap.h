@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/08 16:03:05 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:00:18 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef	struct p_lst
 {
 	int	num;
 	int index;
+	struct p_lst *target;
 	struct p_lst *next;
 	struct p_lst *prev;
 } ps_lst;
@@ -30,6 +31,7 @@ typedef	struct p_lst
 // List Functions -> List/
 ps_lst  *ps_create(int num);
 void    ps_link(ps_lst **lst, ps_lst **node, int index);
+int		ps_size(ps_lst *stack);
 // List Moviments -> Moviments/
 /// Push Moviment -> push.c
 void    push(ps_lst **stack_a, ps_lst **stack_b);
@@ -54,4 +56,6 @@ void    rrr(ps_lst **stack_a, ps_lst **stack_b);
 // Arguments
 int		ft_atoi(char *str);
 void	add_args(ps_lst **head, int *args);
+// Cost
+void	ps_target(ps_lst *stack_a, ps_lst *stack_b);
 #endif
