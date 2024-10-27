@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/25 18:34:17 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/27 17:50:53 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ps_target(ps_lst *stack_a, ps_lst *stack_b)
 
     tmp_a = stack_a;
     tmp_b = stack_b;
-    
     while(tmp_b->next && tmp_a->next)
     {
         if (tmp_a->num < tmp_b->num)
@@ -41,12 +40,10 @@ void redefine_index(ps_lst *stack_a, ps_lst *stack_b)
 {
     ps_lst  *tmp_a;
     ps_lst  *tmp_b;
+	int i;
 
     tmp_a = stack_a;
     tmp_b = stack_b;
-	
-	int i;
-
 	i = 0;
 	while(tmp_a->next)
 	{
@@ -63,7 +60,16 @@ void redefine_index(ps_lst *stack_a, ps_lst *stack_b)
 	tmp_b->index = i;
 }
 
-/*
+void cost(ps_lst *stack_a, ps_lst *stack_b)
+{
+	ps_lst  *tmp_a;
+    ps_lst  *tmp_b;
+
+    tmp_a = stack_a;
+    tmp_b = stack_b;
+    
+}
+
 int main(void)
 {
     int args[] = {9,1,45,99,23,2,8,47};
@@ -92,4 +98,3 @@ int main(void)
 	}
     return (0);
 }
-*/
