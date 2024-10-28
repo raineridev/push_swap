@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_link.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:26:54 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/02 13:44:26 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/24 21:22:30 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void    ps_link(ps_lst **lst, ps_lst **node, int index)
 /*
 int main(void)
 {
+  int   i = 0;
     // Create List
     ps_lst *lst_1 = ps_create(11);
     ps_lst *lst_2 = ps_create(12);
@@ -47,8 +48,8 @@ int main(void)
 	else 
 		printf("\e[101m LIST 3 \e[49m\n");    
     // Link Nodes
-    ps_link(&lst_1, &lst_2);
-    ps_link(&lst_1, &lst_3);
+    ps_link(&lst_1, &lst_2, i);
+    ps_link(&lst_1, &lst_3, i);
     // Connection Tests
         if(lst_1->next && lst_2->prev) 
 		printf("\n\e[42m CONNECTION 1 \e[49m\n");
@@ -58,6 +59,8 @@ int main(void)
 		printf("\n\e[42m CONNECTION 2 \e[49m\n\n");
 	else 
 		printf("\n\e[101m CONNECTION 2 \e[49m\n\n");
+  printf("\n\n\n SIZE LIST -> %d", ps_size(lst_1));
     return (0);
 }
 */
+
