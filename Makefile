@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+         #
+#    By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 19:51:22 by mraineri          #+#    #+#              #
-#    Updated: 2024/10/26 20:08:06 by mraineri         ###   ########.fr        #
+#    Updated: 2024/10/29 12:10:23 by mraineri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME  := push_swap
  
 FILES := push_swap.c Moviments/push.c Moviments/reverse_rotate.c Moviments/rotate.c Moviments/swap.c \
-		 List/ps_create.c List/ps_link.c List/ps_size.c Arguments/add_args.c Arguments/ft_atoi.c Algorithm/cost_managent.c
+		 List/ps_create.c List/ps_link.c List/ps_size.c List/ps_bigest.c Arguments/add_args.c Arguments/ft_atoi.c Algorithm/cost_managent.c
 
 all: 
 	@cc -Wall -Wextra -Werror $(FILES) -o $(NAME)
