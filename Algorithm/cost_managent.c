@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/27 17:50:53 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:52:46 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ps_target(ps_lst *stack_a, ps_lst *stack_b)
     while(tmp_b->next && tmp_a->next)
     {
         if (tmp_a->num < tmp_b->num)
-        	tmp_b = tmp_b->next;
+            tmp_a->target = ps_bigest(stack_b);
         if (!tmp_a->target)
             tmp_a->target = tmp_b;
         tmp_b = tmp_b->next;
@@ -60,19 +60,32 @@ void redefine_index(ps_lst *stack_a, ps_lst *stack_b)
 	tmp_b->index = i;
 }
 
-void cost(ps_lst *stack_a, ps_lst *stack_b)
+void cost_stack(ps_lst *stack)
 {
-	ps_lst  *tmp_a;
-    ps_lst  *tmp_b;
-
-    tmp_a = stack_a;
-    tmp_b = stack_b;
+    ps_lst  *tmp;
     
+    if(!stack)
+        return ;
+    tmp = stack;
+    while(tmp)
+    {
+        if(tmp->index == 0)
+            tmp->cost = 0;
+        else if(tmp->index == 1)
+            tmp->cost = tmp->index;
+        else if((tmp->index - 1) <= (ps_size(tmp) - tmp->index))
+            tmp->cost = tmp->index;
+        else if((tmp->index - 1) > (ps_size(tmp) - tmp->index))
+            tmp->cost = ps_size(stack) - tmp->index;
+        tmp = tmp->next;
+    }
 }
 
 int main(void)
 {
-    int args[] = {9,1,45,99,23,2,8,47};
+    // int args[] = {9,2,45,99,23,1,8,47,10};
+    int args[] = {99,98,45,50,23,2,8};
+
     ps_lst *stack_a = malloc(sizeof(ps_lst));
     ps_lst *stack_b = malloc(sizeof(ps_lst));
 	stack_a = NULL;
@@ -80,20 +93,12 @@ int main(void)
     add_args(&stack_a, args);
     pb(&stack_a, &stack_b);
     pb(&stack_a, &stack_b);
+	redefine_index(stack_a, stack_b);
     ps_target(stack_a, stack_b);
-
 	ps_lst *tmp = stack_a;
 	while(tmp->next)
 	{
-		printf("Node -> Index[%d] -. Value [%d] -? Target Num [%d] -? Target Index [%d]\n", tmp->index, tmp->num, tmp->target->num, tmp->target->index); 
-		tmp = tmp->next;
-	}
-	redefine_index(stack_a, stack_b);
-	tmp = stack_a;
-	printf("\n\n");
-	while(tmp->next)
-	{
-		printf("Node -> Index[%d] -. Value [%d] -? Target Num [%d] -? Target Index [%d]\n", tmp->index, tmp->num, tmp->target->num, tmp->target->index); 
+		printf("Node -> [%d]%d  -? [%d]%d\n", tmp->index, tmp->num, tmp->target->index, tmp->target->num); 
 		tmp = tmp->next;
 	}
     return (0);
