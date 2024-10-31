@@ -18,7 +18,7 @@ void	ps_target(ps_lst *stack_a, ps_lst *stack_b)
         return;
     ps_lst  *tmp_a;
     ps_lst  *tmp_b;
-
+    
     tmp_a = stack_a;
     tmp_b = stack_b;
     while(tmp_b->next && tmp_a->next)
@@ -82,6 +82,19 @@ void cost_stack(ps_lst *stack)
         tmp = tmp->next;
     }
 }
+
+//void more_cheap(ps_lst *stack_a, ps_lst *stack)
+//{   
+//    ps_lst  *tmp_a;
+//    ps_lst  *tmp_b;
+
+//    tmp_a = stack_a;
+//    tmp_b = stack_b;
+//    while(tmp_a)
+//    {
+//        printf(" %d", );
+//    }
+//}
 
 int main(void)
 {

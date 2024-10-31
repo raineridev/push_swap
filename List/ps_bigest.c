@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.c"
-
 ps_lst *ps_bigest(ps_lst *stack)
 {
     ps_lst *tmp;
@@ -26,11 +25,11 @@ ps_lst *ps_bigest(ps_lst *stack)
         tmp = tmp->next;
     }
     tmp = stack;
-	while(tmp)
-	{
-		if(max_num == tmp->num)
-			return (tmp);
-		tmp = tmp->next;
-	}
+    while(tmp)
+    {
+      if(max_num == tmp->num)
+        return (tmp);
+      tmp = tmp->next;
+    }
 	return (NULL);
 }

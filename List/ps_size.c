@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_size.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:14:51 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/26 20:02:36 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/28 16:52:34 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int ps_size(ps_lst *stack)
 	
 	if(!stack)
 		return (-1);
-	i = 1;
+	i = 0;
     while(stack->next)
 	{
 		stack = stack->next;
 		i++;
 	}
-	return (i);
+	return (++i);
 }
