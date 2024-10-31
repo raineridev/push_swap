@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/24 23:00:18 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:34:14 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 typedef	struct p_lst 
 {
 	int	num;
-	int index;
+	int	index;
+	int	cost;
 	struct p_lst *target;
 	struct p_lst *next;
 	struct p_lst *prev;
@@ -31,6 +32,7 @@ typedef	struct p_lst
 // List Functions -> List/
 ps_lst  *ps_create(int num);
 void    ps_link(ps_lst **lst, ps_lst **node, int index);
+ps_lst *ps_bigest(ps_lst *stack);
 int		ps_size(ps_lst *stack);
 // List Moviments -> Moviments/
 /// Push Moviment -> push.c
