@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:21 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/25 00:53:18 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:44:28 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void    push(ps_lst **stack_a, ps_lst **stack_b)
 void	pb(ps_lst **stack_a, ps_lst **stack_b)
 {
 	push(stack_a, stack_b);
-	write(1, "pa\n", 3);
+	write(1, "pb\n", 3);
 }
 
 
 void	pa(ps_lst **stack_b, ps_lst **stack_a)
 {
 	push(stack_b, stack_a);
-	write(1, "pb\n", 3);
+	write(1, "pa\n", 3);
 }
 
 /*

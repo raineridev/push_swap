@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_create.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:10:14 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/24 21:18:37 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:36:10 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ ps_lst  *ps_create(int num)
     if (!lst)
     	return (NULL);
     lst->num = num;
+    lst->cost = 0;
+    lst->target = NULL;
     lst->next = NULL;
     lst->prev = NULL;
 
