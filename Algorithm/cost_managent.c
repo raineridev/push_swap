@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cost_managent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/31 11:52:46 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:38:00 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ps_target(ps_lst *stack_a, ps_lst *stack_b)
 {
+    if (!stack_a || !stack_b)
+        return;
     ps_lst  *tmp_a;
     ps_lst  *tmp_b;
 
@@ -83,23 +85,24 @@ void cost_stack(ps_lst *stack)
 
 int main(void)
 {
-    // int args[] = {9,2,45,99,23,1,8,47,10};
-    int args[] = {99,98,45,50,23,2,8};
-
-    ps_lst *stack_a = malloc(sizeof(ps_lst));
-    ps_lst *stack_b = malloc(sizeof(ps_lst));
-	stack_a = NULL;
-    stack_b = NULL;
-    add_args(&stack_a, args);
+     int args[] = {9,2,45,99,23,1,8,47,10,45};
+     int size = sizeof(args) / sizeof(args[0]);
+     printf("Size of Args:%lu, Size of Num:%lu: Result:%lu\n", sizeof(args), sizeof(args[0]),sizeof(args) / sizeof(args[0]));
+    //int args[] = {99,98,45,50,23,2,8};
+    ps_lst *stack_a = NULL;
+    ps_lst *stack_b = NULL;
+    add_args(&stack_a, args, size);
     pb(&stack_a, &stack_b);
     pb(&stack_a, &stack_b);
-	redefine_index(stack_a, stack_b);
     ps_target(stack_a, stack_b);
-	ps_lst *tmp = stack_a;
-	while(tmp->next)
-	{
-		printf("Node -> [%d]%d  -? [%d]%d\n", tmp->index, tmp->num, tmp->target->index, tmp->target->num); 
-		tmp = tmp->next;
-	}
+    redefine_index(stack_a, stack_b);
+    ps_lst *tmp = stack_a;
+    while(tmp->next)
+    {
+        printf("Node -> [%d]%d\n", tmp->index, tmp->num); 
+        tmp = tmp->next;
+    }
+    ps_free_all(stack_a);
+    ps_free_all(stack_b);
     return (0);
 }
