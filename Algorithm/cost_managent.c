@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cost_managent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/31 13:38:00 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/01 18:03:01 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ps_target(ps_lst *stack_a, ps_lst *stack_b)
     
     tmp_a = stack_a;
     tmp_b = stack_b;
-    while(tmp_b->next && tmp_a->next)
+    while(tmp_b && tmp_a)
     {
         if (tmp_a->num < tmp_b->num)
             tmp_a->target = ps_bigest(stack_b);
@@ -83,25 +83,60 @@ void cost_stack(ps_lst *stack)
     }
 }
 
-//void more_cheap(ps_lst *stack_a, ps_lst *stack)
-//{   
-//    ps_lst  *tmp_a;
-//    ps_lst  *tmp_b;
+int more_cheap(ps_lst *stack)
+{   
+    ps_lst  *tmp;
+    int index;
+    int min;
+    
+    tmp = stack;
+    index = tmp->index;
+    min = tmp->num;
+   while(tmp)
+   {
+        tmp->total_cost = tmp->target->cost + tmp->cost;
+        tmp = tmp->next;
+   }
+   tmp = stack;
+   while(tmp)
+   {
+        if(min < tmp->total_cost)
+        {
+            min = tmp->total_cost;
+            index = tmp->index;
+        }
+        tmp = tmp->next;
+   }
+    return index;
+}
 
-//    tmp_a = stack_a;
-//    tmp_b = stack_b;
-//    while(tmp_a)
-//    {
-//        printf(" %d", );
-//    }
-//}
+void make_moviment(ps_lst **stack, ps_lst **stack_b, int index)
+{
+    ps_lst *tmp;
 
+    tmp = *stack;
+    printf("%d[%d],", tmp->num, index);
+    while(tmp && tmp->index != index)
+        tmp = tmp->next;
+    printf("%d\n", tmp->num);
+    while (tmp->index != 0)
+    {
+        if (tmp->index == 1)
+            sa(stack); 
+        else if ((tmp->index - 1) <= (ps_size(*stack) - tmp->index))  
+            ra(stack);
+        else if ((tmp->index - 1) > (ps_size(*stack) - tmp->index))
+            rra(stack);
+        redefine_index(*stack, *stack_b);
+    }
+    pb(stack, stack_b);
+}
 int main(void)
 {
-     int args[] = {9,2,45,99,23,1,8,47,10,45};
+     int args[] = {9,1,45,99,23,2,8,47,10,11};
+    //  int args[] = {99,98,45,50,23,2,8};
      int size = sizeof(args) / sizeof(args[0]);
      printf("Size of Args:%lu, Size of Num:%lu: Result:%lu\n", sizeof(args), sizeof(args[0]),sizeof(args) / sizeof(args[0]));
-    //int args[] = {99,98,45,50,23,2,8};
     ps_lst *stack_a = NULL;
     ps_lst *stack_b = NULL;
     add_args(&stack_a, args, size);
@@ -109,8 +144,76 @@ int main(void)
     pb(&stack_a, &stack_b);
     ps_target(stack_a, stack_b);
     redefine_index(stack_a, stack_b);
+    cost_stack(stack_a);
+    cost_stack(stack_b);
     ps_lst *tmp = stack_a;
-    while(tmp->next)
+    printf("===================\n");
+    printf("\e[44m NODES(STACK A) WITH INDEX \e[49m\n");
+    while(tmp)
+    {
+        printf("Node -> [%d]%d\n", tmp->index, tmp->num); 
+        tmp = tmp->next;
+    }
+    tmp = stack_b;
+    printf("===================\n");
+    printf("\e[44m NODES(STACK B) WITH INDEX \e[49m\n");
+    while(tmp)
+    {
+        printf("Node -> [%d]%d\n", tmp->index, tmp->num); 
+        tmp = tmp->next;
+    }
+    printf("===================\n");
+    printf("\e[42m TARGET NODES \e[49m\n");
+    tmp = stack_a;
+    while(tmp)
+    {
+        printf("Node -> [%d]%d  -? [%d]%d\n", tmp->index, tmp->num, tmp->target->index, tmp->target->num); 
+        tmp = tmp->next;
+    }
+    printf("===================\n");
+    printf("\e[43m COST NODES(STACK A) \e[49m\n");
+    tmp = stack_a;
+    while(tmp)
+    {
+        printf("Node -> [%d]%d | Cost -> %d\n", tmp->index, tmp->num, tmp->cost); 
+        tmp = tmp->next;
+    }
+    printf("===================\n");
+    printf("\e[43m COST NODES(STACK B) \e[49m\n");
+    tmp = stack_b;
+    while(tmp)
+    {
+        printf("Node -> [%d]%d | Cost -> %d\n", tmp->index, tmp->num, tmp->cost); 
+        tmp = tmp->next;
+    }
+    printf("===================\n");
+    printf("\e[45m COST NODES TOTAL COST(STACK A) \e[49m\n");
+    printf("Function Return:%d\n", more_cheap(stack_a));
+    tmp = stack_a;
+    while(tmp)
+    {
+        printf("Node -> [%d]%d | Total Cost -> %d\n", tmp->index, tmp->num, tmp->total_cost); 
+        tmp = tmp->next;
+    }
+    printf("===================\n");
+    make_moviment(&stack_a, &stack_b, more_cheap(stack_a));
+    tmp = stack_a;
+    printf("===================\n");
+    printf("\e[44m NODES(STACK A) WITH INDEX \e[49m\n");
+    while(tmp)
+    {
+        printf("Node -> [%d]%d\n", tmp->index, tmp->num); 
+        tmp = tmp->next;
+    }
+    ps_target(stack_a, stack_b);
+    redefine_index(stack_a, stack_b);
+    cost_stack(stack_a);
+    cost_stack(stack_b);
+    make_moviment(&stack_a, &stack_b, more_cheap(stack_a));
+    tmp = stack_a;
+    printf("===================\n");
+    printf("\e[44m NODES(STACK A) WITH INDEX \e[49m\n");
+    while(tmp)
     {
         printf("Node -> [%d]%d\n", tmp->index, tmp->num); 
         tmp = tmp->next;
