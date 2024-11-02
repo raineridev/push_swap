@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/31 13:16:29 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:59:35 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef	struct p_lst
 	int	num;
 	int	index;
 	int	cost;
+	int total_cost;
 	struct p_lst *target;
 	struct p_lst *next;
 	struct p_lst *prev;
