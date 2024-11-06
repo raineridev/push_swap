@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_args.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:23:33 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/31 13:16:13 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/10/31 19:49:10 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ void add_args(ps_lst **head, int *args, int size)
         return;
 
     *head = ps_create(args[i]);
-    
-    while (i <= size)
+    while (++i < size)
     {
-        node = ps_create(args[i++]);
+        node = ps_create(args[i]);
         ps_link(head, &node, i);
     }
 }

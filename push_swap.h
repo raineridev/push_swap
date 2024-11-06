@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/31 13:16:29 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/05 21:13:39 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 
 typedef	struct p_lst 
 {
 	int	num;
 	int	index;
 	int	cost;
+	int total_cost;
 	struct p_lst *target;
 	struct p_lst *next;
 	struct p_lst *prev;
@@ -31,10 +33,12 @@ typedef	struct p_lst
 
 // List Functions -> List/
 ps_lst  *ps_create(int num);
-void    ps_link(ps_lst **lst, ps_lst **node, int index);
-ps_lst *ps_bigest(ps_lst *stack);
+ps_lst 	*ps_soon(ps_lst *node_a, ps_lst *stack_b);
+ps_lst 	*ps_bigest(ps_lst *stack);
+ps_lst 	*ps_smallest(ps_lst *stack);
 int		ps_size(ps_lst *stack);
 void	ps_free_all(ps_lst *list);
+void    ps_link(ps_lst **lst, ps_lst **node, int index);
 // List Moviments -> Moviments/
 /// Push Moviment -> push.c
 void    push(ps_lst **stack_a, ps_lst **stack_b);
