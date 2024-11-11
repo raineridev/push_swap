@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:27:55 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 21:07:04 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/11 05:15:14 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void rotate(ps_lst **stack)
 
     while(tmp_run->next)
         tmp_run = tmp_run->next;
-    tmp_run->prev->next = NULL;
-    tmp_run->next = tmp;
-    *stack = tmp_run;
-    
+    *stack = (*stack)->next;
     (*stack)->prev = NULL;
-    tmp->prev = *stack;
+    tmp_run->next = tmp;
+    tmp->next = NULL;
+    tmp->prev = tmp_run;
+
 }
 
 void    ra(ps_lst **stack)
@@ -41,7 +41,7 @@ void    ra(ps_lst **stack)
 void    rb(ps_lst **stack)
 {
     rotate(stack);
-    write(1, "ra\n", 3);
+    write(1, "rb\n", 3);
 }
 
 void    rr(ps_lst **stack_a, ps_lst **stack_b)
