@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:28 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/02 13:02:41 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:48:17 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	swap(ps_lst **stack)
 	*stack = (*stack)->next;
 	tmp->next = (*stack)->next;
 	(*stack)->next = tmp;
+	(*stack)->prev = NULL;
 	tmp->prev = *stack;
 	
 }
