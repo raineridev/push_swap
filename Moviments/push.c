@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:21 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/31 11:44:28 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:31:58 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void    push(ps_lst **stack_a, ps_lst **stack_b)
     while (tmp->next)
         tmp = tmp->next;
     tmp->next = NULL;
+	tmp_a->prev = NULL;
 }
 
 void	pb(ps_lst **stack_a, ps_lst **stack_b)
