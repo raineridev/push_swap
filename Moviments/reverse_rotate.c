@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:41:30 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/01 21:02:36 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/11 03:21:22 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ void reverse_rotate(ps_lst **stack)
 
     tmp = *stack;
     tmp_run = *stack;
-    
-    (*stack)->next->prev = NULL;
-    while(tmp_run->next)
-        tmp_run = tmp_run->next;
-    *stack = (*stack)->next;
+    while(tmp->next)
+        tmp = tmp->next;
+    tmp->prev->next = NULL;
+    tmp_run->prev = tmp;
+    *stack = tmp;
+    (*stack)->next = tmp_run;
     (*stack)->prev = NULL;
-    tmp->prev = tmp_run;
-    tmp_run->next = tmp;
-    
 }
 
 void    rra(ps_lst **stack_a)
@@ -74,9 +72,11 @@ int main(void)
 	else 
 		printf("\e[101m STACK A \e[49m\n");
     reverse_rotate(&stack_a_1);
-    printf("%d, %d, %d", stack_a_1->num, stack_a_1->next->num, stack_a_1->next->next->num);
-    printf("\nUsing Prev:\n");
-    printf("%d, %d, %d", stack_a_1->next->prev->num, stack_a_1->next->next->prev->num, stack_a_1->next->next->num);
+    while(stack_a_1)
+    {
+        printf("%d\n", stack_a_1->num);
+        stack_a_1 = stack_a_1->next;
+    }
     return (0);
 }
 */
