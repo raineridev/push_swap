@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:26:54 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/24 21:22:30 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:36:01 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    ps_link(ps_lst **lst, ps_lst **node, int index)
         tmp = tmp->next;
     tmp->next = *node;
     (*node)->index = index;
-    (*node)->prev = *lst;
+    (*node)->prev = tmp;
 }  
 /*
 int main(void)
