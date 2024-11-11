@@ -6,7 +6,7 @@
 #    By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 19:51:22 by mraineri          #+#    #+#              #
-#    Updated: 2024/11/05 20:46:44 by mraineri         ###   ########.fr        #
+#    Updated: 2024/11/06 22:46:02 by mraineri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,6 @@ all:
 	@cc -Wall -Wextra -Werror $(FILES) -o $(NAME)
 	@clear
 	@echo "\e[42m SUCCESSFUL COMPILATION \e[49m"
-
-valgrind:
-	@cc -Wall -Wextra -Werror $(FILES) -o $(NAME)
-	@clear
-	@valgrind ./push_swap
 
 clean: 
 	@rm -rf $(NAME)
