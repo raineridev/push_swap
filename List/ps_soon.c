@@ -6,12 +6,11 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:59:08 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/06 15:44:59 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/11 01:53:01 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.c"
-#include "limits.h"
 
 ps_lst *ps_soon(ps_lst *stack_a, ps_lst *stack_b) 
 {
@@ -24,11 +23,11 @@ ps_lst *ps_soon(ps_lst *stack_a, ps_lst *stack_b)
     cheap_node = NULL;
     while(tmp_b)
     {
-        if(stack_a->num > tmp_b->num)
+        if(stack_a->num > tmp_b->num) 
         {
-            if (!cheap_node)
-                cheap_node = tmp_b;
-            if (cheap_node->num < tmp_b->num)
+            if (!cheap_node) 
+                cheap_node = tmp_b;  
+            if (cheap_node->num < tmp_b->num) 
                 cheap_node = tmp_b;
         }
         tmp_b = tmp_b->next;
