@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/05 21:13:39 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/11 03:09:03 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ int		ft_atoi(char *str);
 void	add_args(ps_lst **head, int *args, int size);
 // Cost
 void	ps_target(ps_lst *stack_a, ps_lst *stack_b);
+void	redefine_index(ps_lst *stack_a, ps_lst *stack_b);
 #endif
