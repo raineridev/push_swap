@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:28 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/10 23:48:17 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:03:07 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	swap(ps_lst **stack)
 
 	ps_lst *tmp = *stack;
 	*stack = (*stack)->next;
+	if((*stack)->next)
+		(*stack)->next->prev = tmp;
 	tmp->next = (*stack)->next;
 	(*stack)->next = tmp;
 	(*stack)->prev = NULL;
