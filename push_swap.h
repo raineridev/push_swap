@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/18 15:52:30 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:43:57 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,13 @@ int		*trim(int argv,char *argc[]);
 // Cost
 void	ps_target(ps_lst *stack_a, ps_lst *stack_b);
 void	redefine_index(ps_lst *stack_a, ps_lst *stack_b);
+// Algorithmn
+void	moviment_stack_b(ps_lst **stack_a, ps_lst **stack_b);
+void	ordering_stack_a(ps_lst **stack_a, ps_lst **stack_b);
+void	ordering(ps_lst **stack_a, ps_lst **stack_b);
+void	make_moviment(ps_lst **stack_a, ps_lst **stack_b);
+void	cost_stack(ps_lst *stack);
+void 	redefine_index(ps_lst *stack_a, ps_lst *stack_b);
+void	ps_target(ps_lst *stack_a, ps_lst *stack_b);
+ps_lst	*more_cheap(ps_lst *stack);
 #endif

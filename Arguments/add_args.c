@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:23:33 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/31 19:49:10 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/17 22:46:16 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,3 @@ void add_args(ps_lst **head, int *args, int size)
         ps_link(head, &node, i);
     }
 }
-
-

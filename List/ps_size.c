@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_size.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:14:51 by mraineri          #+#    #+#             */
-/*   Updated: 2024/10/28 16:52:34 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/12 23:50:19 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
