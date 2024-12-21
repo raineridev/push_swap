@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   generel_managent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/22 21:08:04 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/21 09:08:40 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,8 @@ void ordering(ps_lst **stack_a, ps_lst **stack_b)
             rra(stack_a);
         redefine_index(tmp, tmp->target);
     }
-    pa(stack_b, stack_a);
+    if(ps_size(*stack_b) > 0)
+        pa(stack_b, stack_a);
 }
 
 int main(int argv, char *argc[])
@@ -149,7 +150,8 @@ int main(int argv, char *argc[])
     ps_lst *stack_b = NULL;
     add_args(&stack_a, args,(argv - 1));
     free(args);
-    moviment_stack_b(&stack_a, &stack_b);
+    if(ps_size(stack_a) > 3)
+        moviment_stack_b(&stack_a, &stack_b);
     ordering_stack_a(&stack_a, &stack_b);
     ps_free_all(stack_a);
     ps_free_all(stack_b);
