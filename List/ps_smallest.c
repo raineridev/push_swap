@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:10:06 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/08 23:21:33 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/11/16 05:54:48 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ ps_lst *ps_smallest(ps_lst *stack)
             min_node = tmp;
         tmp = tmp->next;
     }
-    return (min_node); // 
+    return (min_node); 
 }
