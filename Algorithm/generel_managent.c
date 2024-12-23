@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 17:23:52 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:27:59 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,13 @@ void	make_moviment(t_lst **stack_a, t_lst **stack_b)
 	tmp = more_cheap(*stack_a);
 	while (tmp->index != 0)
 	{
-		if ((tmp->index) <= (ps_size(tmp) - tmp->index) && (tmp->index == tmp->target->index))
+		if ((tmp->index) <= (ps_size(tmp) - tmp->index)
+			&& (tmp->index == tmp->target->index))
 			rr(stack_a, stack_b);
 		else if ((tmp->index) <= (ps_size(tmp) - tmp->index))
 			ra(stack_a);
-		else if ((tmp->index) > (ps_size(tmp) - tmp->index) && (tmp->index == tmp->target->index))
+		else if ((tmp->index) > (ps_size(tmp) - tmp->index)
+			&& (tmp->index == tmp->target->index))
 			rrr(stack_a, stack_b);
 		else if ((tmp->index) > (ps_size(tmp) - tmp->index))
 			rra(stack_a);
@@ -101,7 +103,8 @@ void	make_moviment(t_lst **stack_a, t_lst **stack_b)
 	{
 		if ((tmp->target->index) <= (ps_size(tmp->target) - tmp->target->index))
 			rb(stack_b);
-		else if ((tmp->target->index) > (ps_size(tmp->target) - tmp->target->index))
+		else if ((tmp->target->index)
+			> (ps_size(tmp->target) - tmp->target->index))
 			rrb(stack_b);
 	}
 	pb(stack_a, stack_b);
