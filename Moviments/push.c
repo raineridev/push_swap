@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:21 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:28:50 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:22:12 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	push(t_lst **stack_a, t_lst **stack_b)
 	tmp->next = NULL;
 	if (tmp_a)
 		tmp_a->prev = NULL;
+	redefine_index(*stack_a, *stack_b);
 }
 
 void	pb(t_lst **stack_a, t_lst **stack_b)

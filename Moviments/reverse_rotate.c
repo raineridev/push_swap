@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:41:30 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:28:50 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:22:15 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	reverse_rotate(t_lst **stack)
 	*stack = tmp;
 	(*stack)->next = tmp_run;
 	(*stack)->prev = NULL;
+	redefine_index(*stack, NULL);
 }
 
 void	rra(t_lst **stack_a)

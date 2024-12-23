@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:30:51 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:23:05 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_lst	*ps_smallest(t_lst *stack);
 t_lst	*ps_soon_bigest(t_lst *stack_a, t_lst *stack_b);
 int		ps_size(t_lst *stack);
 void	ps_free_all(t_lst *list);
+void	ps_target(t_lst *stack_a, t_lst *stack_b);
 void	ps_link(t_lst **lst, t_lst **node, int index);
 // List Moviments -> Moviments/
 /// Push Moviment -> push.c

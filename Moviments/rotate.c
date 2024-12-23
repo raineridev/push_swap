@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:27:55 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:28:50 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:22:19 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	rotate(t_lst **stack)
 	tmp_run->next = tmp;
 	tmp->next = NULL;
 	tmp->prev = tmp_run;
+	redefine_index(*stack, NULL);
 }
 
 void	ra(t_lst **stack)

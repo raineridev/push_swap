@@ -6,25 +6,11 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:28:50 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:23:52 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	ps_target(t_lst *stack_a, t_lst *stack_b)
-{
-	t_lst	*tmp_a;
-
-	if (!stack_a || !stack_b)
-		return ;
-	tmp_a = stack_a;
-	while (tmp_a)
-	{
-		tmp_a->target = ps_soon(tmp_a, stack_b);
-		tmp_a = tmp_a->next;
-	}
-}
 
 void	redefine_index(t_lst *stack_a, t_lst *stack_b)
 {
@@ -110,7 +96,6 @@ void	make_moviment(t_lst **stack_a, t_lst **stack_b)
 			rrr(stack_a, stack_b);
 		else if ((tmp->index) > (ps_size(tmp) - tmp->index))
 			rra(stack_a);
-		redefine_index(tmp, tmp->target);
 	}
 	while (tmp->target->index != 0)
 	{
@@ -118,7 +103,6 @@ void	make_moviment(t_lst **stack_a, t_lst **stack_b)
 			rb(stack_b);
 		else if ((tmp->target->index) > (ps_size(tmp->target) - tmp->target->index))
 			rrb(stack_b);
-		redefine_index(tmp, tmp->target);
 	}
 	pb(stack_a, stack_b);
 }

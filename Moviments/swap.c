@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:28 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:28:50 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:22:23 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	swap(t_lst **stack)
 	(*stack)->next = tmp;
 	(*stack)->prev = NULL;
 	tmp->prev = *stack;
+	redefine_index(*stack, NULL);
 }
 
 void	sa(t_lst **stack_a)
