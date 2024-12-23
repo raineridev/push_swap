@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:02:27 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/21 18:35:48 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:15:35 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 int	ft_atoi( char *str)
 {
