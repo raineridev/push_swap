@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:02:27 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:15:35 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/26 11:27:28 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_atoi( char *str)
+long int	ft_atol(char *str)
 {
 	int	i;
-	int	num;
+	long int	num;
 	int	signal;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 01:55:10 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 15:37:18 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:37:30 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,31 @@ int	validate_str(const char *str)
 	return (0);
 }
 
+int	validate_int(long int nbr)
+{
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		return (1);
+	return (0);
+}
+
 int	*trim(int argv, char *argc[])
 {
 	int	i;
 	int	*list;
-
 	i = 1;
+	
 	list = malloc((argv - 1) * sizeof(int));
 	if (!list)
 		return (NULL);
 	while (i < argv)
 	{
-		if (validate_str(argc[i]))
+		if (validate_str(argc[i]) || validate_int(ft_atol(argc[i])))
 		{
 			write(2, "Error\n", 6);
 			free(list);
 			exit(1);
 		}
-		list[i - 1] = ft_atoi(argc[i]);
+		list[i - 1] = ft_atol(argc[i]);
 		i++;
 	}
 	return (list);

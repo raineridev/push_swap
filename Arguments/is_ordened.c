@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_args.c                                    :+:      :+:    :+:   */
+/*   is_ordened.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 22:36:16 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 18:23:57 by mraineri         ###   ########.fr       */
+/*   Created: 2024/12/26 12:09:50 by mraineri          #+#    #+#             */
+/*   Updated: 2024/12/26 15:00:44 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	validate_args(int size, int *argc)
+int is_ordened(t_lst *stack)
 {
-	if (size == 1)
+	int stack_size;
+	int i;
+
+	i = 0;
+	stack_size = ps_size(stack);
+	while(stack)
 	{
-		write(2, "Error\n", 6);
-		free(argc);
-		exit(1);
+        if (stack->next && stack->num > stack->next->num)
+			return (0);
+		stack = stack->next;
 	}
-	if (find_duplicate(argc, (size - 1)))
-	{
-		write(2, "Error\n", 6);
-		free(argc);
-		exit(1);
-	}
+	return (1);
 }
+//&& (ps_soon_bigest(stack, stack)->index != i)

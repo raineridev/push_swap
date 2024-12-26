@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 17:23:05 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:20:48 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		ps_size(t_lst *stack);
 void	ps_free_all(t_lst *list);
 void	ps_target(t_lst *stack_a, t_lst *stack_b);
 void	ps_link(t_lst **lst, t_lst **node, int index);
+void	ps_target(t_lst *stack_a, t_lst *stack_b);
 // List Moviments -> Moviments/
 /// Push Moviment -> push.c
 void	push(t_lst **stack_a, t_lst **stack_b);
@@ -63,12 +64,13 @@ void	rrb(t_lst **stack_a);
 void	rrr(t_lst **stack_a, t_lst **stack_b);
 ///
 // Arguments
-int		ft_atoi(char *str);
+long int		ft_atol(char *str);
 void	validate_args(int size, int *argc);
 void	add_args(t_lst **head, int *args, int size);
 int		args_size(char *argc[]);
 int		find_duplicate(int *arr, int size);
 int		*trim(int argv, char *argc[]);
+int		is_ordened(t_lst *stack);
 // Cost
 void	ps_target(t_lst *stack_a, t_lst *stack_b);
 void	redefine_index(t_lst *stack_a, t_lst *stack_b);

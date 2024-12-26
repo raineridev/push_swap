@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_args.c                                    :+:      :+:    :+:   */
+/*   ps_target.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 22:36:16 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 18:23:57 by mraineri         ###   ########.fr       */
+/*   Created: 2024/12/23 18:11:52 by mraineri          #+#    #+#             */
+/*   Updated: 2024/12/23 18:14:30 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	validate_args(int size, int *argc)
+void	ps_target(t_lst *stack_a, t_lst *stack_b)
 {
-	if (size == 1)
+	t_lst	*tmp_a;
+
+	if (!stack_a || !stack_b)
+		return ;
+	tmp_a = stack_a;
+	while (tmp_a)
 	{
-		write(2, "Error\n", 6);
-		free(argc);
-		exit(1);
-	}
-	if (find_duplicate(argc, (size - 1)))
-	{
-		write(2, "Error\n", 6);
-		free(argc);
-		exit(1);
+		tmp_a->target = ps_soon(tmp_a, stack_b);
+		tmp_a = tmp_a->next;
 	}
 }
