@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_ordened.c                                       :+:      :+:    :+:   */
+/*   is_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 12:09:50 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/26 15:00:44 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:15:42 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int is_ordened(t_lst *stack)
+int is_sorted(t_lst *stack)
 {
 	int stack_size;
 	int i;
@@ -27,4 +27,3 @@ int is_ordened(t_lst *stack)
 	}
 	return (1);
 }
-//&& (ps_soon_bigest(stack, stack)->index != i)

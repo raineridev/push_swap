@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   generel_managent.c                                 :+:      :+:    :+:   */
+/*   general_managent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:22:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 17:27:59 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:15:42 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	ordering(t_lst **stack_a, t_lst **stack_b)
 {
 	t_lst	*tmp;
 
-	tmp = ps_soon_bigest(*stack_a, *stack_b);
+	tmp = ps_next_biggest(*stack_a, *stack_b);
 	if (!tmp)
 		return ;
 	while (tmp->index != 0)

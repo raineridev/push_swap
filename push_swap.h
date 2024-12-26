@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/26 12:20:48 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:20:54 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ typedef struct p_lst
 
 // List Functions -> List/
 t_lst	*ps_create(int num);
-t_lst	*ps_soon(t_lst *node_a, t_lst *stack_b);
-t_lst	*ps_bigest(t_lst *stack);
+t_lst	*ps_next(t_lst *node_a, t_lst *stack_b);
+t_lst	*ps_biggest(t_lst *stack);
 t_lst	*ps_smallest(t_lst *stack);
-t_lst	*ps_soon_bigest(t_lst *stack_a, t_lst *stack_b);
+t_lst	*ps_next_biggest(t_lst *stack_a, t_lst *stack_b);
 int		ps_size(t_lst *stack);
 void	ps_free_all(t_lst *list);
 void	ps_target(t_lst *stack_a, t_lst *stack_b);
@@ -70,7 +70,7 @@ void	add_args(t_lst **head, int *args, int size);
 int		args_size(char *argc[]);
 int		find_duplicate(int *arr, int size);
 int		*trim(int argv, char *argc[]);
-int		is_ordened(t_lst *stack);
+int		is_sorted(t_lst *stack);
 // Cost
 void	ps_target(t_lst *stack_a, t_lst *stack_b);
 void	redefine_index(t_lst *stack_a, t_lst *stack_b);
