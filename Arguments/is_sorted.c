@@ -14,11 +14,6 @@
 
 int	is_sorted(t_lst *stack)
 {
-	int	stack_size;
-	int	i;
-
-	i = 0;
-	stack_size = ps_size(stack);
 	while (stack)
 	{
 		if (stack->next && stack->num > stack->next->num)
