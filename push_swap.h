@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:59:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/28 15:57:57 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/28 17:38:32 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void		make_moviment(t_lst **stack_a, t_lst **stack_b);
 void		cost_stack(t_lst *stack);
 void		redefine_index(t_lst *stack_a, t_lst *stack_b);
 void		ps_target(t_lst *stack_a, t_lst *stack_b);
+int			ft_strlen(char *str);
 t_lst		*more_cheap(t_lst *stack);
 #endif

@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 19:05:44 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/26 16:17:40 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/28 17:57:31 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,9 @@ void	ordering_stack_a(t_lst **stack_a, t_lst **stack_b)
 {
 	redefine_index(*stack_a, *stack_b);
 	while (ps_biggest(*stack_a)->index != 2 && ps_size(*stack_a) > 2)
-	{
 		ra(stack_a);
-		redefine_index(*stack_a, *stack_b);
-	}
 	if (ps_smallest(*stack_a)->index == 1)
 		sa(stack_a);
-	redefine_index(*stack_a, *stack_b);
 	while (ps_size(*stack_b) > 0)
 	{
 		ordering(stack_a, stack_b);
