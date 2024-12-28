@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:02:27 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/28 17:40:08 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/28 18:22:30 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ long int	ft_atol(char *str)
 	if (!str || !*str)
 		return (0);
 	if (ft_strlen(str) > 12)
-		return 999999999999;
+		return (999999999999);
 	signal = (str[i] != '-') - (str[i] == '-');
 	i += (str[i] == '-' || str[i] == '+');
 	while (str[i] >= '0' && str[i] <= '9')

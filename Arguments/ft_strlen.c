@@ -6,20 +6,20 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 17:35:52 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/28 17:43:55 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/28 18:23:04 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
 		return (-1);
-	while(*str == '0' || *str == '-' || *str == '+')
+	while (*str == '0' || *str == '-' || *str == '+')
 		str++;
-	while(str[i])
+	while (str[i])
 		i++;
-	return i;
+	return (i);
 }
