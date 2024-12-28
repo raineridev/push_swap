@@ -3,30 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ps_smallest.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:10:06 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/16 05:54:48 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:35:51 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.c"
+#include "../push_swap.h"
 
-ps_lst *ps_smallest(ps_lst *stack)
+t_lst	*ps_smallest(t_lst *stack)
 {
-    ps_lst *tmp;
-    ps_lst *min_node;
+	t_lst	*tmp;
+	t_lst	*min_node;
 
-    if (!stack)
-        return (NULL);
-
-    tmp = stack;
-    min_node = stack;
-    while (tmp) 
-    {
-        if (tmp->num < min_node->num)
-            min_node = tmp;
-        tmp = tmp->next;
-    }
-    return (min_node); 
+	if (!stack)
+		return (NULL);
+	tmp = stack;
+	min_node = stack;
+	while (tmp)
+	{
+		if (tmp->num < min_node->num)
+			min_node = tmp;
+		tmp = tmp->next;
+	}
+	return (min_node);
 }

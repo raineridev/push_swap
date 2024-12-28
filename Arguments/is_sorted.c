@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   is_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 15:02:27 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/21 18:35:48 by mraineri         ###   ########.fr       */
+/*   Created: 2024/12/26 12:09:50 by mraineri          #+#    #+#             */
+/*   Updated: 2024/12/26 16:15:42 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-int	ft_atoi( char *str)
+int	is_sorted(t_lst *stack)
 {
+	int	stack_size;
 	int	i;
-	int	num;
-	int	signal;
 
 	i = 0;
-	num = 0;
-	if (!str || !*str)
-		return (0);
-	signal = (str[i] != '-') - (str[i] == '-');
-	i += (str[i] == '-' || str[i] == '+');
-	while (str[i] >= '0' && str[i] <= '9')
+	stack_size = ps_size(stack);
+	while (stack)
 	{
-		num = num * 10 + (str[i] - '0');
-		i++;
+		if (stack->next && stack->num > stack->next->num)
+			return (0);
+		stack = stack->next;
 	}
-	return (num * signal);
+	return (1);
 }

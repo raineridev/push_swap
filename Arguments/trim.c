@@ -3,55 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   trim.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 01:55:10 by mraineri          #+#    #+#             */
-/*   Updated: 2024/11/21 18:41:21 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/28 15:54:03 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
+#include "../push_swap.h"
 
-int	validate_str(char *str)
+int	validate_str(const char *str)
 {
-	while(*str)
+	if (*str == '-' || *str == '+')
+		str++;
+	if (*str == '\0')
+		return (1);
+	while (*str)
 	{
-		if((*str >= 32 && *str <= 47) || (*str >= 58 && *str <= 126))
-            return (1);
+		if (!(*str >= '0' && *str <= '9'))
+			return (1);
 		str++;
 	}
-    return (0);
+	return (0);
 }
 
-int *trim(int argv,char *argc[])
+int	validate_int(long int nbr)
 {
-    int i;
-    int *list;
-    
-    i = 1;
-    list = malloc((argv - 1) * sizeof(int));
-    if(!list)
-        return (NULL);
-    while(i < argv)
-    {
-        if(validate_str(argc[i]))
-        {
-			write(2, "Error\n", 6);
-            free(list);
-			exit(1);
-        }
-        list[i - 1] = ft_atoi(argc[i]);
-        i++;
-    }
-    return (list);
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		return (1);
+	return (0);
 }
 
-// int main(int argv, char *argc[])
-// {
-//     int *i = (trim(argv, argc));
-//     int b = 0;
-//     while(b < (argv - 1))
-//         printf("%d\n",i[b++]);
-    
-//     return (0);
-// }
+int	*trim(int argv, char *argc[])
+{
+	int	i;
+	int	*list;
+
+	i = 1;
+	list = malloc((argv - 1) * sizeof(int));
+	if (!list)
+		return (NULL);
+	while (i < argv)
+	{
+		if (validate_str(argc[i]) || validate_int(ft_atol(argc[i]))
+			|| !argc[i][0])
+		{
+			write(2, "Error\n", 6);
+			free(list);
+			exit(1);
+		}
+		list[i - 1] = ft_atol(argc[i]);
+		i++;
+	}
+	return (list);
+}

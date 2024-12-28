@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_link.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 13:26:54 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/23 16:28:50 by mraineri         ###   ########.fr       */
+/*   Created: 2024/10/02 15:02:27 by mraineri          #+#    #+#             */
+/*   Updated: 2024/12/28 15:52:52 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ps_link(t_lst **lst, t_lst **node, int index)
+long int	ft_atol(char *str)
 {
-	t_lst	*tmp;
+	long int	num;
+	int			i;
+	int			signal;
 
-	if (!(*lst) && !(*node))
-		return ;
-	tmp = *lst;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = *node;
-	(*node)->index = index;
-	(*node)->prev = tmp;
+	i = 0;
+	num = 0;
+	if (!str || !*str)
+		return (0);
+	signal = (str[i] != '-') - (str[i] == '-');
+	i += (str[i] == '-' || str[i] == '+');
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - '0');
+		i++;
+	}
+	return (num * signal);
 }
