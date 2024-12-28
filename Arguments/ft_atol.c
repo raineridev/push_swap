@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:02:27 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/26 11:27:28 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/28 15:52:52 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long int	ft_atol(char *str)
 {
-	int	i;
 	long int	num;
-	int	signal;
+	int			i;
+	int			signal;
 
 	i = 0;
 	num = 0;

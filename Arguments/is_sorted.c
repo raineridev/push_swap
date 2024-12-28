@@ -12,16 +12,16 @@
 
 #include "../push_swap.h"
 
-int is_sorted(t_lst *stack)
+int	is_sorted(t_lst *stack)
 {
-	int stack_size;
-	int i;
+	int	stack_size;
+	int	i;
 
 	i = 0;
 	stack_size = ps_size(stack);
-	while(stack)
+	while (stack)
 	{
-        if (stack->next && stack->num > stack->next->num)
+		if (stack->next && stack->num > stack->next->num)
 			return (0);
 		stack = stack->next;
 	}
